@@ -8,6 +8,8 @@ Technologies Used
 
 Setup and Running Locally
 
+Deployment with GitHub Pages
+
 Usage
 
 Future Enhancements
@@ -89,6 +91,61 @@ Simply open the index.html file in your web browser (e.g., by double-clicking it
 
 Important Note for Live Weather:
 The Live Weather feature requires an OpenWeatherMap API key. Ensure that the API_KEY variable in script.js is set to your valid key. If you encounter a 401 Unauthorized error, your API key might be incorrect or not yet active.
+
+Deployment with GitHub Pages
+You can easily host this static website using GitHub Pages, making it accessible online.
+
+Create a GitHub Repository:
+
+Go to GitHub and create a new public repository (e.g., e-farmconnect-zambia).
+
+Important: If you want your site to be yourusername.github.io, name the repository exactly that. Otherwise, a regular repository name will result in a URL like yourusername.github.io/repository-name/.
+
+Push Your Code to GitHub:
+
+Initialize a Git repository in your project folder (if you haven't already):
+
+git init
+
+Add your files:
+
+git add .
+
+Commit your changes:
+
+git commit -m "Initial commit of E-FarmConnect Zambia app"
+
+Link to your GitHub repository:
+
+git remote add origin https://github.com/your-username/your-repository-name.git
+
+(Replace your-username and your-repository-name)
+
+Push your code:
+
+git push -u origin master
+
+(Or main if that's your default branch name)
+
+Enable GitHub Pages:
+
+On GitHub, navigate to your repository.
+
+Click on "Settings" (usually near the top right).
+
+In the left sidebar, click on "Pages".
+
+Under "Build and deployment", for "Source", select "Deploy from a branch".
+
+Under "Branch", select your primary branch (e.g., main or master) and choose the / (root) folder.
+
+Click "Save".
+
+Access Your Live Site:
+
+GitHub Pages will now build and deploy your site. This process usually takes a few minutes.
+
+Once deployed, the URL for your live site will be displayed on the "Pages" settings page (e.g., https://your-username.github.io/your-repository-name/).
 
 Usage
 Navigation: Use the navigation bar at the top to jump between sections (Home, Features, Benefits, Timeline, Future, Contact).
