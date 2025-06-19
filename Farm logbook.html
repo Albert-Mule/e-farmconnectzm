@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Logbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 0 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            font-size: 16px;
+        }
+        .tab-button:hover {
+            background-color: #45a049;
+        }
+        .tab-content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        form {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Farm Logbook</h1>
+
+    <div class="tabs">
+        <button class="tab-button" onclick="openTab(event, 'expenses')">Expenses</button>
+        <button class="tab-button" onclick="openTab(event, 'yields')">Yields</button>
+        <button class="tab-button" onclick="openTab(event, 'activities')">Activities</button>
+    </div>
+
+    <div id="expenses" class="tab-content active">
+        <form>
+            <h2>Log a New Expense</h2>
+            <label for="expense-date">Date:</label>
+            <input type="date" id="expense-date" name="expense-date" required>
+
+            <label for="expense-category">Category:</label>
+            <select id="expense-category" name="expense-category">
+                <option value="seeds">Seeds</option>
+                <option value="fertilizer">Fertilizer</option>
+                <option value="pesticide">Pesticide</option>
+                <option value="feed">Animal Feed</option>
+                <option value="labor">Labor</option>
+                <option value="equipment-maintenance">Equipment Maintenance</option>
+                <option value="fuel">Fuel</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="expense-description">Description:</label>
+            <input type="text" id="expense-description" name="expense-description" placeholder="e.g., 50kg of Urea Fertilizer">
+
+            <label for="expense-amount">Amount ($):</label>
+            <input type="number" id="expense-amount" name="expense-amount" min="0" step="0.01" required>
+
+            <input type="submit" value="Add Expense">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Amount ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-06-15</td>
+                    <td>Seeds</td>
+                    <td>Certified Maize Seed (10kg)</td>
+                    <td>55.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="yields" class="tab-content">
+        <form>
+            <h2>Log a New Yield</h2>
+            <label for="yield-date">Date of Harvest:</label>
+            <input type="date" id="yield-date" name="yield-date" required>
+
+            <label for="yield-crop">Crop/Product:</label>
+            <input type="text" id="yield-crop" name="yield-crop" placeholder="e.g., Maize, Soybeans, Milk" required>
+
+            <label for="yield-quantity">Quantity:</label>
+            <input type="number" id="yield-quantity" name="yield-quantity" min="0" required>
+
+            <label for="yield-unit">Unit:</label>
+            <select id="yield-unit" name="yield-unit">
+                <option value="kg">Kilograms (kg)</option>
+                <option value="bushels">Bushels</option>
+                <option value="liters">Liters</option>
+                <option value="bales">Bales</option>
+                <option value="head">Head (Livestock)</option>
+            </select>
+
+            <label for="yield-notes">Notes:</label>
+            <textarea id="yield-notes" name="yield-notes" rows="3" placeholder="e.g., Grade A, high moisture content"></textarea>
+
+            <input type="submit" value="Add Yield">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Crop/Product</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-05-20</td>
+                    <td>Wheat</td>
+                    <td>500</td>
+                    <td>Bushels</td>
+                    <td>Good quality</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="activities" class="tab-content">
+        <form>
+            <h2>Log a New Activity</h2>
+            <label for="activity-date">Date:</label>
+            <input type="date" id="activity-date" name="activity-date" required>
+
+            <label for="activity-type">Activity Type:</label>
+            <select id="activity-type" name="activity-type">
+                <option value="planting">Planting</option>
+                <option value="spraying">Spraying</option>
+                <option value="harvesting">Harvesting</option>
+                <option value="tillage">Tillage</option>
+                <option value="scouting">Scouting</option>
+                <option value="feeding">Feeding</option>
+                <option value="maintenance">Maintenance</option>
+            </select>
+
+            <label for="activity-description">Description:</label>
+            <textarea id="activity-description" name="activity-description" rows="4" placeholder="e.g., Planted maize in Field A, Applied herbicide to Field B"></textarea>
+
+            <input type="submit" value="Add Activity">
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Activity Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025-06-10</td>
+                    <td>Spraying</td>
+                    <td>Applied post-emergence herbicide to soybean fields.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementsByClassName("tab-button")[0].click();
+</script>
+
+</body>
+</html>

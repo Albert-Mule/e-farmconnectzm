@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - E-FarmConnect Zambia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">E-FarmConnect<span>Zambia</span></div>
+            <button class="toggle-sidebar">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </a></li>
+                <li class="user-dropdown">
+                    <a href="#" class="user-dropdown-toggle">
+                        <div class="user-avatar">JD</div>
+                        <span>Albert Mulenga</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="user-dropdown-menu">
+                        <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                        <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="user-avatar">JD</div>
+                    <div class="user-details">
+                        <h4>Albert Mulenga</h4>
+                        <p>Farmer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="sidebar-menu">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="weather.html"><i class="fas fa-cloud-sun"></i> Weather</a></li>
+                <li><a href="crops.html"><i class="fas fa-seedling"></i> Crops</a></li>
+                <li><a href="livestock.html"><i class="fas fa-horse"></i> Livestock</a></li>
+                <li><a href="logbook.html"><i class="fas fa-book"></i> Farm Logbook</a></li>
+                <li><a href="marketplace.html"><i class="fas fa-store"></i> Marketplace</a></li>
+                <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="dashboard-header">
+                <div class="dashboard-title">
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, John! Here's your farm overview.</p>
+                </div>
+                
+                <div class="dashboard-actions">
+                    <button class="btn-secondary"><i class="fas fa-download"></i> Export Report</button>
+                    <button class="btn-primary"><i class="fas fa-plus"></i> Add Activity</button>
+                </div>
+            </div>
+            
+            <!-- Dashboard Cards -->
+            <div class="dashboard-cards">
+                <div class="dashboard-card">
+                    <div class="card-icon weather">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Weather</h3>
+                    <div class="card-value">28°C</div>
+                    <p>Partly cloudy, 20% chance of rain</p>
+                    <div class="card-change positive">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>3°C from yesterday</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon crops">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crops</h3>
+                    <div class="card-value">4</div>
+                    <p>Active crop types</p>
+                    <div class="card-change positive">
+                        <i class="fas fa-check"></i>
+                        <span>All healthy</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon livestock">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <h3>Livestock</h3>
+                    <div class="card-value">32</div>
+                    <p>Total animals</p>
+                    <div class="card-change negative">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>2 need attention</span>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-icon tasks">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Tasks</h3>
+                    <div class="card-value">7</div>
+                    <p>Pending tasks</p>
+                    <div class="card-change">
+                        <i class="fas fa-clock"></i>
+                        <span>3 due today</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Weather Forecast -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Weather Forecast</h2>
+                    <a href="weather.html" class="view-all">View Details <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="weather-forecast">
+                    <div class="forecast-day today">
+                        <div class="forecast-date">Today</div>
+                        <div class="forecast-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="forecast-temp">28°C</div>
+                        <div class="forecast-desc">Partly Cloudy</div>
+                        <div class="forecast-rain">20% <i class="fas fa-tint"></i></div>
+                    </div>
+                    
+                    <div class="forecast-day">
+                        <div class="forecast-date">Tue</div>
+                        <div class="forecast-icon">
+                            <i class="fas fa-cloud-sun-rain"></i>
+                        </div>
+                        <div class="forecast-temp">26°C</div>
+                        <div class="forecast-desc">Light Rain</div>
+                        <div class="forecast-rain">60% <i class="fas fa-tint"></i></div>
+                    </div>
+                    
+                    <div class="forecast-day">
+                        <div class="forecast-date">Wed</div>
+                        <div class="forecast-icon">
+                            <i class="fas fa-cloud-showers-heavy"></i>
+                        </div>
+                        <div class="forecast-temp">24°C</div>
+                        <div class="forecast-desc">Heavy Rain</div>
+                        <div class="forecast-rain">80% <i class="fas fa-tint"></i></div>
+                    </div>
+                    
+                    <div class="forecast-day">
+                        <div class="forecast-date">Thu</div>
+                        <div class="forecast-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <div class="forecast-temp">25°C</div>
+                        <div class="forecast-desc">Partly Cloudy</div>
+                        <div class="forecast-rain">30% <i class="fas fa-tint"></i></div>
+                    </div>
+                    
+                    <div class="forecast-day">
+                        <div class="forecast-date">Fri</div>
+                        <div class="forecast-icon">
+                            <i class="fas fa-sun"></i>
+                        </div>
+                        <div class="forecast-temp">29°C</div>
+                        <div class="forecast-desc">Sunny</div>
+                        <div class="forecast-rain">10% <i class="fas fa-tint"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Crop Status -->
+            <div class="dashboard-row">
+                <div class="dashboard-column">
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Crop Status</h2>
+                            <a href="crops.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="crop-status">
+                            <div class="crop-item">
+                                <div class="crop-info">
+                                    <div class="crop-icon">
+                                        <i class="fas fa-wheat-awn"></i>
+                                    </div>
+                                    <div class="crop-details">
+                                        <h4>Maize</h4>
+                                        <p>Planted: 15 Oct 2023</p>
+                                    </div>
+                                </div>
+                                <div class="crop-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 65%;"></div>
+                                    </div>
+                                    <div class="progress-text">65% to harvest</div>
+                                </div>
+                                <div class="crop-status-indicator healthy">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Healthy</span>
+                                </div>
+                            </div>
+                            
+                            <div class="crop-item">
+                                <div class="crop-info">
+                                    <div class="crop-icon">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <div class="crop-details">
+                                        <h4>Soybeans</h4>
+                                        <p>Planted: 1 Nov 2023</p>
+                                    </div>
+                                </div>
+                                <div class="crop-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 40%;"></div>
+                                    </div>
+                                    <div class="progress-text">40% to harvest</div>
+                                </div>
+                                <div class="crop-status-indicator warning">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <span>Needs water</span>
+                                </div>
+                            </div>
+                            
+                            <div class="crop-item">
+                                <div class="crop-info">
+                                    <div class="crop-icon">
+                                        <i class="fas fa-carrot"></i>
+                                    </div>
+                                    <div class="crop-details">
+                                        <h4>Tomatoes</h4>
+                                        <p>Planted: 5 Dec 2023</p>
+                                    </div>
+                                </div>
+                                <div class="crop-progress">
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 25%;"></div>
+                                    </div>
+                                    <div class="progress-text">25% to harvest</div>
+                                </div>
+                                <div class="crop-status-indicator healthy">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Healthy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-column">
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2>Upcoming Tasks</h2>
+                            <a href="tasks.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        
+                        <div class="task-list">
+                            <div class="task-item urgent">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task1">
+                                    <label for="task1"></label>
+                                </div>
+                                <div class="task-content">
+                                    <h4>Apply fertilizer to maize field</h4>
+                                    <p>Field A - North section</p>
+                                    <div class="task-meta">
+                                        <span class="task-date"><i class="fas fa-calendar"></i> Today</span>
+                                        <span class="task-priority urgent">Urgent</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="task-item high">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task2">
+                                    <label for="task2"></label>
+                                </div>
+                                <div class="task-content">
+                                    <h4>Water soybean plants</h4>
+                                    <p>Field B - All sections</p>
+                                    <div class="task-meta">
+                                        <span class="task-date"><i class="fas fa-calendar"></i> Today</span>
+                                        <span class="task-priority high">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="task-item medium">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task3">
+                                    <label for="task3"></label>
+                                </div>
+                                <div class="task-content">
+                                    <h4>Check livestock health</h4>
+                                    <p>Cattle pen - 32 animals</p>
+                                    <div class="task-meta">
+                                        <span class="task-date"><i class="fas fa-calendar"></i> Today</span>
+                                        <span class="task-priority medium">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="task-item normal">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" id="task4">
+                                    <label for="task4"></label>
+                                </div>
+                                <div class="task-content">
+                                    <h4>Repair fence in south field</h4>
+                                    <p>South boundary - 20m section</p>
+                                    <div class="task-meta">
+                                        <span class="task-date"><i class="fas fa-calendar"></i> Tomorrow</span>
+                                        <span class="task-priority normal">Normal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <a href="logbook.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="activity-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Plowed Field C</h4>
+                            <p>Prepared 2.5 hectares for planting tomatoes</p>
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-calendar"></i> Today, 10:30 AM</span>
+                                <span><i class="fas fa-user"></i> Albert Mulenga</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-prescription-bottle"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Applied Pesticide</h4>
+                            <p>Treated maize field against fall armyworm</p>
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-calendar"></i> Yesterday, 4:15 PM</span>
+                                <span><i class="fas fa-user"></i> Albert Mulenga</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Purchased Supplies</h4>
+                            <p>Bought 10 bags of fertilizer and 5 liters of pesticide</p>
+                            <div class="timeline-meta">
+                                <span><i class="fas fa-calendar"></i> 2 days ago, 11:00 AM</span>
+                                <span><i class="fas fa-user"></i> Albert Mulenga</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

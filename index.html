@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Farm connect- Smart Farming Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">E-FarmConnect<span>Zambia<span></div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#future">Future</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-primary">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Empowering African Farmers</h1>
+                <p class="slogan">Smart farming solutions in your pocket, even offline</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn-primary">Explore Features</a>
+                    <a href="signup.html" class="btn-secondary">Get Started</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="e-farm image.png" alt="E-FarmConnect App on mobile devices">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">App Features</h2>
+            <p class="section-subtitle">Designed specifically for farmers in Zambia and Southern Africa</p>
+
+            <div class="features-grid">
+                <!-- Live Weather Integration Card -->
+                <div class="feature-card weather-widget-container">
+                    <div class="feature-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Live Weather</h3>
+                    <div id="current-weather-data">
+                        <p>Loading weather data...</p>
+                    </div>
+                    <div class="weather-controls">
+                        <input type="text" id="city-input" placeholder="Enter city (e.g., Lusaka)">
+                        <button id="get-weather-btn" class="btn-secondary">Get Weather</button>
+                    </div>
+                </div>
+                <!-- End Live Weather Integration Card -->
+
+                <!-- Crop Advisor Card with Interactive Elements -->
+                <div class="feature-card crop-advisor-widget-container">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Advisor</h3>
+                    <div class="crop-advisor-controls">
+                        <div class="form-group">
+                            <label for="crop-type-input" class="sr-only">Crop Type</label>
+                            <input type="text" id="crop-type-input" placeholder="e.g., Maize, Soybeans" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="soil-type-input" class="sr-only">Soil Type</label>
+                            <input type="text" id="soil-type-input" placeholder="e.g., Loam, Clay" class="input-field">
+                        </div>
+                        <button id="get-crop-advice-btn" class="btn-secondary">Get Advice</button>
+                    </div>
+                    <div id="crop-advisor-output" class="advice-output">
+                        <p>Enter crop and soil type to get recommendations.</p>
+                    </div>
+                </div>
+                <!-- End Crop Advisor Card -->
+
+                <!-- Livestock Guide Card with Interactive Elements -->
+                <div class="feature-card livestock-guide-widget-container">
+                    <div class="feature-icon">
+                        <i class="fas fa-horse"></i>
+                    </div>
+                    <h3>Livestock Guide</h3>
+                    <div class="livestock-guide-controls">
+                        <div class="form-group">
+                            <label for="animal-type-input" class="sr-only">Animal Type</label>
+                            <input type="text" id="animal-type-input" placeholder="e.g., Cattle, Goats" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="concern-input" class="sr-only">Concern (e.g., Feeding, Breeding)</label>
+                            <input type="text" id="concern-input" placeholder="e.g., Feeding, Breeding, Health" class="input-field">
+                        </div>
+                        <button id="get-livestock-advice-btn" class="btn-secondary">Get Guide</button>
+                    </div>
+                    <div id="livestock-guide-output" class="advice-output">
+                        <p>Enter animal type and concern to get guidance.</p>
+                    </div>
+                </div>
+                <!-- End Livestock Guide Card -->
+
+                <!-- Farm Logbook Card with Interactive Elements -->
+                <div class="feature-card farm-logbook-widget-container">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Farm Logbook</h3>
+                    <div class="logbook-controls">
+                        <h4>Add New Entry:</h4>
+                        <div class="form-group">
+                            <label for="log-date-input">Date</label>
+                            <input type="date" id="log-date-input" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-activity-input">Activity</label>
+                            <input type="text" id="log-activity-input" placeholder="e.g., Planting, Spraying, Weaning" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-description-input">Description</label>
+                            <textarea id="log-description-input" placeholder="Details of the activity" rows="2" class="input-field"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="log-expenses-input">Expenses (ZMW)</label>
+                            <input type="number" id="log-expenses-input" placeholder="e.g., 500" step="0.01" class="input-field">
+                        </div>
+                        <div class="form-group">
+                            <label for="log-yield-input">Yield (Kg/Units)</label>
+                            <input type="number" id="log-yield-input" placeholder="e.g., 1000" step="0.01" class="input-field">
+                        </div>
+                        <button id="save-log-entry-btn" class="btn-primary">Save Entry</button>
+                    </div>
+
+                    <div class="logbook-display">
+                        <h4>Recent Entries:</h4>
+                        <div id="logbook-entries-list">
+                            <p>No entries yet. Add one above!</p>
+                        </div>
+                        <button id="clear-logbook-btn" class="btn-secondary clear-button">Clear All Entries</button>
+                    </div>
+                </div>
+                <!-- End Farm Logbook Card -->
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wifi-slash"></i>
+                    </div>
+                    <h3>Offline Mode</h3>
+                    <p>Full functionality even without internet connection, perfect for remote areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose E-FarmConnect?</h2>
+            <p class="section-subtitle">Practical benefits for your farming business</p>
+
+            <div class="benefits-container">
+                <div class="benefit-image">
+                    <img src="farmer using e-farmer.png" alt="Farmer using E-FarmConnect app">
+                </div>
+
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>AI-Driven Advice</h3>
+                            <p>Get personalized recommendations based on your specific farm conditions, crop types, and local climate patterns</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>5G Optimization</h3>
+                            <p>Fast data synchronization when connected, with efficient data usage to save on mobile costs</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-save"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h3>Saved Logs</h3>
+                            <p>Never lose your farming data with secure cloud backups and easy export options for reports</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="container">
+            <h2 class="section-title">Implementation Plan</h2>
+            <p class="section-subtitle">Our roadmap to delivering E-FarmConnect Africa</p>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Q1 2023</div>
+                    <div class="timeline-content">
+                        <h3>Research & Planning</h3>
+                        <p>Field research with farmers, requirement gathering, and technical planning</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Q2 2023</div>
+                    <div class="timeline-content">
+                        <h3>Core Development</h3>
+                        <p>Building the app foundation, offline functionality, and basic features</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Q3 2023</div>
+                    <div class="timeline-content">
+                        <h3>AI Integration</h3>
+                        <p>Implementing machine learning models for crop and livestock recommendations</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Q4 2023</div>
+                    <div class="timeline-content">
+                        <h3>Beta Testing</h3>
+                        <p>Field testing with selected farmers in Zambia and gathering feedback</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Q1 2024</div>
+                    <div class="timeline-content">
+                        <h3>Official Launch</h3>
+                        <p>Public release with marketing campaigns and farmer training programs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Enhancements Section -->
+    <section id="future" class="future">
+        <div class="container">
+            <h2 class="section-title">Future Enhancements</h2>
+            <p class="section-subtitle">Our vision for continued growth and innovation</p>
+
+            <div class="future-grid">
+                <div class="future-card">
+                    <div class="future-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>IoT Sensors Integration</h3>
+                    <p>Connect with affordable soil moisture, temperature, and other sensors for real-time monitoring</p>
+                </div>
+
+                <div class="future-card">
+                    <div class="future-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Farmer Marketplace</h3>
+                    <p>Direct selling platform connecting farmers with buyers, reducing middlemen costs</p>
+                </div>
+
+                <div class="future-card">
+                    <div class="future-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Multi-language Support</h3>
+                    <p>Adding local African languages to make the app accessible to more farmers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Sign up for early access or contact our team</p>
+
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="signup-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="farm-type">Farm Type</label>
+                            <select id="farm-type" name="farm-type">
+                                <option value="">Select your farm type</option>
+                                <option value="crops">Crops</option>
+                                <option value="livestock">Livestock</option>
+                                <option value="mixed">Mixed Farming</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message (Optional)</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Sign Up for Early Access</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Ranchdale, Lusaka, Zambia</p>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@E-farmconnectzambia.com</p>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+260 770 071 159</p>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">E-FarmConnect<span>Africa</span></div>
+                    <p>Smart farming solutions for Southern Africa</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#benefits">Benefits</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Farming Tips</a></li>
+                            <li><a href="#">User Guide</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Data Usage</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Albert Mulenga for E-FarmConnect Zambia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
